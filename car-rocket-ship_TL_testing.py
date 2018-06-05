@@ -27,14 +27,9 @@ X_train = X_train.reshape(N_tr,-1)
 X_test = X_train.reshape(N_te,-1)
 in_size = X_train.shape[1]
 #Adding custom Layers 
+reg = 10000
 model = Sequential([
-	Dense(1000,input_shape=(in_size,),kernel_regularizer=regularizers.l2(0.01)),
-	Activation('relu'),
-	Dropout(.5),
-	Dense(100),
-	Activation('relu'),
-	Dropout(.5),
-	Dense(3,kernel_regularizer=regularizers.l2(0.01)),
+	Dense(3,input_shape=(in_size,),kernel_regularizer=regularizers.l2(reg)),
 	Activation('softmax')
 	])
 
