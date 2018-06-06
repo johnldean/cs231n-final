@@ -7,6 +7,8 @@ from keras import backend as k
 from keras.callbacks import ModelCheckpoint, LearningRateScheduler, TensorBoard, EarlyStopping
 from keras.layers import Dense, Activation
 from keras import regularizers
+import tensorflow as tf
+import keras as ke
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -49,11 +51,30 @@ if 1:
         Activation('softmax')
         ])
 
-# Train the model and plot training info
 model.compile(loss = "categorical_crossentropy", optimizer = optimizers.SGD(lr=0.001, momentum=0.9), metrics=["accuracy"])
+
+def weights_grad(X,model):
+	N = X.shape[0]
+	M = model.output.shape[1]
+	w = model.trainable_weights
+	out = model.layers[-2].output 
+	grads = []
+	for i in range(N): #iterate over the batch
+		for j in range(M): #iterate over class score
+			grads.append(k.gradients(out[i,j],w))
+	sess = tf.InteractiveSession()
+	sess.run(tf.global_variables_initializer())
+	grads_evaled = sess.run(grads,feed_dict={model.input:X})
+	# grads_evaled is is an M*N list of the gradients of the weights.
+	# each element of this list in another list, that will be something like
+	# [W1_grad, b1_grad, W2_grad, b2_grad ...]
+	return grads_evaled
+
+# Train the model and plot training info
+
 hist = model.fit(X_train,y_train,
     validation_data=(X_test,y_test),
-    batch_size = 50,
+    batch_size = 100,
     epochs=15,
     verbose=2
     )
