@@ -12,8 +12,10 @@ import keras as ke
 import matplotlib.pyplot as plt
 import numpy as np
 
+import keras
 
 load_dir = "assets/car-rocket-ship/imnet_nofc/VGG19/128x128/"
+model_dir = "assets/models/"
 X_train = np.load(load_dir + 'X_train.npy')
 y_train = np.load(load_dir + 'y_train.npy')
 X_test = np.load(load_dir + 'X_test.npy')
@@ -25,16 +27,16 @@ X_test = X_test.reshape(N_te,-1)
 in_size = X_train.shape[1]
 #choosing bewtween different network architectures  
 reg=0.001
-if 0:
+if 1:
     model = Sequential([
-        Dense(100,input_shape=(in_size,),kernel_regularizer=regularizers.l2(reg)),
+        Dense(50,input_shape=(in_size,),kernel_regularizer=regularizers.l1(reg)),
         Activation('relu'),
-        Dropout(0.3),
-        Dense(50,kernel_regularizer=regularizers.l2(reg)),
+        #Dropout(0.3),
+        Dense(10,kernel_regularizer=regularizers.l1(reg)),
         Activation('relu'),
-        Dropout(0.3),
-        Dense(3,kernel_regularizer=regularizers.l2(reg)),
-        Activation('softmax')
+        #Dropout(0.3),
+        Dense(3,kernel_regularizer=regularizers.l1(reg)),
+        #Activation('softmax')
         ])
 if 0:
     model = Sequential([
@@ -42,7 +44,7 @@ if 0:
         Activation('softmax')
         ])
 
-if 1:
+if 0:
     model = Sequential([
         #Dropout(0,input_shape=(in_size,)),
         Dense(10,input_shape=(in_size,),kernel_regularizer=regularizers.l2(0.5)),
@@ -51,7 +53,7 @@ if 1:
         Activation('softmax')
         ])
 
-model.compile(loss = "categorical_crossentropy", optimizer = optimizers.SGD(lr=0.001, momentum=0.9), metrics=["accuracy"])
+model.compile(loss = "categorical_hinge", optimizer = optimizers.SGD(lr=0.003, momentum=0.9), metrics=["accuracy"])
 
 def weights_grad(X,model):
 	N = X.shape[0]
@@ -75,9 +77,10 @@ def weights_grad(X,model):
 hist = model.fit(X_train,y_train,
     validation_data=(X_test,y_test),
     batch_size = 100,
-    epochs=15,
+    epochs=20,
     verbose=2
     )
+model.save(model_dir + "tfnet_crs_50-10-3")
 plt.plot(hist.history['acc'], label="train")
 plt.plot(hist.history['val_acc'], label="val")
 plt.xlabel("epoch")
@@ -86,3 +89,4 @@ plt.legend()
 plt.grid()
 plt.tight_layout()
 plt.show()
+
