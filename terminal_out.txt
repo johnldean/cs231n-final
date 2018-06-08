@@ -1,0 +1,401 @@
+(cs231n) ➜  cs231n-final git:(master) ✗ python tf-convex-prox.py
+/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-06-07 19:28:20.691516: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+d
+<keras.layers.core.Dense object at 0x1825dc5da0>
+<keras.layers.core.Activation object at 0x1825dd1048>
+<keras.layers.core.Dense object at 0x1825dc5f60>
+<keras.layers.core.Activation object at 0x1825dde7b8>
+<keras.layers.core.Dense object at 0x1825dde668>
+initial test accuracy:  0.28833333333333333
+Starting optimization...
+iter:  1
+SOLVED!, l =  2.0654444050585568
+yhat accuracy:  1.0
+training accuracy:  0.26
+test accuracy:  0.42833333333333334
+iter:  2
+SOLVED!, l =  1.4141066690499002
+yhat accuracy:  1.0
+training accuracy:  0.62
+test accuracy:  0.5816666666666667
+iter:  3
+SOLVED!, l =  6.698874652878686
+yhat accuracy:  1.0
+training accuracy:  0.36
+test accuracy:  0.445
+iter:  4
+SOLVED!, l =  3.426384921843969
+yhat accuracy:  1.0
+training accuracy:  0.16
+test accuracy:  0.16166666666666665
+iter:  5
+SOLVED!, l =  27.100851683855147
+yhat accuracy:  1.0
+training accuracy:  0.3
+test accuracy:  0.30833333333333335
+iter:  6
+SOLVED!, l =  58.51250663123117
+yhat accuracy:  1.0
+training accuracy:  0.12
+test accuracy:  0.18166666666666667
+iter:  7
+SOLVED!, l =  8559.806288566573
+yhat accuracy:  1.0
+training accuracy:  0.2
+test accuracy:  0.18
+Traceback (most recent call last):
+  File "tf-convex-prox.py", line 167, in <module>
+    r = prob.solve(verbose=False)
+  File "/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/cvxpy/problems/problem.py", line 246, in solve
+    return solve_func(self, *args, **kwargs)
+  File "/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/cvxpy/problems/problem.py", line 361, in _solve
+    self.unpack_results(solution, self._solving_chain, inverse_data)
+  File "/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/cvxpy/problems/problem.py", line 468, in unpack_results
+    chain.solver.name())
+cvxpy.error.SolverError: Solver 'ECOS' failed. Try another solver.
+(cs231n) ➜  cs231n-final git:(master) ✗ git push
+Everything up-to-date
+(cs231n) ➜  cs231n-final git:(master) ✗ python tf-convex-prox.py
+/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-06-07 19:37:03.814859: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+d
+<keras.layers.core.Dense object at 0x182cda4da0>
+<keras.layers.core.Activation object at 0x182cdb0048>
+<keras.layers.core.Dense object at 0x182cda4f60>
+<keras.layers.core.Activation object at 0x182cdbd7b8>
+<keras.layers.core.Dense object at 0x182cdbd668>
+initial test accuracy:  0.12833333333333333
+Starting optimization...
+iter:  1
+SOLVED!, l =  3.5523541826518397
+yhat accuracy:  1.0
+training accuracy:  0.08
+test accuracy:  0.13
+iter:  2
+SOLVED!, l =  1.1059023702381836
+yhat accuracy:  1.0
+training accuracy:  0.1
+test accuracy:  0.21333333333333335
+iter:  3
+SOLVED!, l =  1.119109628813779
+yhat accuracy:  1.0
+training accuracy:  0.28
+test accuracy:  0.28
+iter:  4
+SOLVED!, l =  1.253412619494732
+yhat accuracy:  1.0
+training accuracy:  0.22
+test accuracy:  0.215
+iter:  5
+SOLVED!, l =  0.29016481592781246
+yhat accuracy:  1.0
+training accuracy:  0.1
+test accuracy:  0.21333333333333335
+iter:  6
+SOLVED!, l =  0.3742195299974185
+yhat accuracy:  1.0
+training accuracy:  0.24
+test accuracy:  0.25333333333333335
+iter:  7
+SOLVED!, l =  0.34729698669252684
+yhat accuracy:  1.0
+training accuracy:  0.28
+test accuracy:  0.27
+iter:  8
+SOLVED!, l =  0.1306166556179349
+yhat accuracy:  1.0
+training accuracy:  0.34
+test accuracy:  0.2683333333333333
+iter:  9
+SOLVED!, l =  0.23363127360696959
+yhat accuracy:  1.0
+training accuracy:  0.24
+test accuracy:  0.23333333333333334
+iter:  10
+SOLVED!, l =  0.1523851200494107
+yhat accuracy:  1.0
+training accuracy:  0.3
+test accuracy:  0.245
+iter:  11
+SOLVED!, l =  0.35782033768815713
+yhat accuracy:  1.0
+training accuracy:  0.16
+test accuracy:  0.25
+iter:  12
+SOLVED!, l =  0.1766877693665947
+yhat accuracy:  1.0
+training accuracy:  0.28
+test accuracy:  0.275
+final accuracy:  0.275
+(cs231n) ➜  cs231n-final git:(master) ✗ python tf-convex-prox.py
+/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-06-07 20:00:50.031071: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+d
+<keras.layers.core.Dense object at 0x1828f45dd8>
+<keras.layers.core.Activation object at 0x1828f51080>
+<keras.layers.core.Dense object at 0x1828f51208>
+<keras.layers.core.Activation object at 0x1828f5e7f0>
+<keras.layers.core.Dense object at 0x1828f5e6a0>
+initial test accuracy:  0.3383333333333333
+Starting optimization...
+iter:  1
+SOLVED!, l =  2.0322918833304797
+yhat accuracy:  1.0
+training accuracy:  0.34
+test accuracy:  0.3333333333333333
+iter:  2
+SOLVED!, l =  0.581856144781959
+yhat accuracy:  1.0
+training accuracy:  0.38
+test accuracy:  0.33166666666666667
+iter:  3
+SOLVED!, l =  0.5148563279827556
+yhat accuracy:  1.0
+training accuracy:  0.46
+test accuracy:  0.41833333333333333
+iter:  4
+SOLVED!, l =  0.5234634431334726
+yhat accuracy:  1.0
+training accuracy:  0.54
+test accuracy:  0.5066666666666667
+iter:  5
+SOLVED!, l =  0.8406546092204679
+yhat accuracy:  1.0
+training accuracy:  0.5
+test accuracy:  0.5233333333333333
+iter:  6
+SOLVED!, l =  0.21526356683273207
+yhat accuracy:  1.0
+training accuracy:  0.5
+test accuracy:  0.52
+iter:  7
+SOLVED!, l =  0.29040640020626335
+yhat accuracy:  1.0
+training accuracy:  0.58
+test accuracy:  0.5166666666666667
+iter:  8
+SOLVED!, l =  0.3127412748265783
+yhat accuracy:  1.0
+training accuracy:  0.6
+test accuracy:  0.4766666666666667
+iter:  9
+SOLVED!, l =  0.4180964732469634
+yhat accuracy:  1.0
+training accuracy:  0.38
+test accuracy:  0.5216666666666666
+iter:  10
+SOLVED!, l =  0.3366080726413486
+yhat accuracy:  1.0
+training accuracy:  0.52
+test accuracy:  0.5066666666666667
+iter:  11
+SOLVED!, l =  0.19652298203721907
+yhat accuracy:  1.0
+training accuracy:  0.44
+test accuracy:  0.48333333333333334
+iter:  12
+SOLVED!, l =  0.3212219362643509
+yhat accuracy:  1.0
+training accuracy:  0.46
+test accuracy:  0.465
+final accuracy:  0.465
+(cs231n) ➜  cs231n-final git:(master) ✗ python tf-convex-prox.py
+/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-06-07 20:18:06.722409: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+d
+<keras.layers.core.Dense object at 0x181f014da0>
+<keras.layers.core.Activation object at 0x181f020048>
+<keras.layers.core.Dense object at 0x181f014f60>
+<keras.layers.core.Activation object at 0x181f02d7b8>
+<keras.layers.core.Dense object at 0x181f02d668>
+initial test accuracy:  0.33
+Starting optimization...
+iter:  1
+SOLVED!, l =  20.38651541102695
+yhat accuracy:  0.96
+training accuracy:  0.42
+test accuracy:  0.3283333333333333
+iter:  2
+SOLVED!, l =  87.30856168500438
+yhat accuracy:  0.86
+training accuracy:  0.36
+test accuracy:  0.3616666666666667
+iter:  3
+SOLVED!, l =  611.9234595652151
+yhat accuracy:  0.88
+training accuracy:  0.24
+test accuracy:  0.3333333333333333
+iter:  4
+SOLVED!, l =  219.4063702397682
+yhat accuracy:  1.0
+training accuracy:  0.36
+test accuracy:  0.30333333333333334
+iter:  5
+SOLVED!, l =  144.27361355367952
+yhat accuracy:  1.0
+training accuracy:  0.2
+test accuracy:  0.29333333333333333
+iter:  6
+SOLVED!, l =  123.73023908162459
+yhat accuracy:  1.0
+training accuracy:  0.32
+test accuracy:  0.28
+iter:  7
+SOLVED!, l =  77.70609014194841
+yhat accuracy:  1.0
+training accuracy:  0.34
+test accuracy:  0.33666666666666667
+iter:  8
+SOLVED!, l =  48.96898700295779
+yhat accuracy:  1.0
+training accuracy:  0.46
+test accuracy:  0.4
+iter:  9
+SOLVED!, l =  110.24484825924398
+yhat accuracy:  1.0
+training accuracy:  0.42
+test accuracy:  0.31666666666666665
+iter:  10
+SOLVED!, l =  54.02577257480971
+yhat accuracy:  1.0
+training accuracy:  0.42
+test accuracy:  0.33166666666666667
+iter:  11
+SOLVED!, l =  21.493593997658856
+yhat accuracy:  1.0
+training accuracy:  0.42
+test accuracy:  0.3333333333333333
+iter:  12
+SOLVED!, l =  11.534918019343204
+yhat accuracy:  1.0
+training accuracy:  0.34
+test accuracy:  0.3283333333333333
+iter:  13
+SOLVED!, l =  1260.935821830675
+yhat accuracy:  1.0
+training accuracy:  0.04
+test accuracy:  0.06166666666666667
+iter:  14
+SOLVED!, l =  130.65771079809628
+yhat accuracy:  1.0
+training accuracy:  0.02
+test accuracy:  0.07
+iter:  15
+SOLVED!, l =  1637.4992713170284
+yhat accuracy:  1.0
+training accuracy:  0.22
+test accuracy:  0.165
+iter:  16
+SOLVED!, l =  1076.210946028778
+yhat accuracy:  1.0
+training accuracy:  0.08
+test accuracy:  0.11833333333333333
+iter:  17
+SOLVED!, l =  3751.5199945796035
+yhat accuracy:  1.0
+training accuracy:  0.38
+test accuracy:  0.37166666666666665
+iter:  18
+SOLVED!, l =  361.4941923938167
+yhat accuracy:  1.0
+training accuracy:  0.32
+test accuracy:  0.36
+iter:  19
+SOLVED!, l =  23978.07412356928
+yhat accuracy:  1.0
+training accuracy:  0.4
+test accuracy:  0.32
+Traceback (most recent call last):
+  File "tf-convex-prox.py", line 168, in <module>
+    r = prob.solve(verbose=False)
+  File "/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/cvxpy/problems/problem.py", line 246, in solve
+    return solve_func(self, *args, **kwargs)
+  File "/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/cvxpy/problems/problem.py", line 361, in _solve
+    self.unpack_results(solution, self._solving_chain, inverse_data)
+  File "/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/cvxpy/problems/problem.py", line 468, in unpack_results
+    chain.solver.name())
+cvxpy.error.SolverError: Solver 'ECOS' failed. Try another solver.
+(cs231n) ➜  cs231n-final git:(master) ✗ python tf-convex-prox.py
+/Users/theodiamandis/anaconda3/envs/cs231n/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-06-07 20:41:16.875534: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+d
+<keras.layers.core.Dense object at 0x182921dda0>
+<keras.layers.core.Activation object at 0x1829229048>
+<keras.layers.core.Dense object at 0x182921df60>
+<keras.layers.core.Activation object at 0x18292367b8>
+<keras.layers.core.Dense object at 0x1829236668>
+initial test accuracy:  0.20166666666666666
+Starting optimization...
+iter:  1
+SOLVED!, l =  1.6938610912443082
+yhat accuracy:  1.0
+training accuracy:  0.28
+test accuracy:  0.3516666666666667
+iter:  2
+SOLVED!, l =  0.509802676048956
+yhat accuracy:  1.0
+training accuracy:  0.5
+test accuracy:  0.36833333333333335
+iter:  3
+SOLVED!, l =  0.38772459523903535
+yhat accuracy:  1.0
+training accuracy:  0.46
+test accuracy:  0.43
+iter:  4
+SOLVED!, l =  0.3563428722796331
+yhat accuracy:  1.0
+training accuracy:  0.44
+test accuracy:  0.46
+iter:  5
+SOLVED!, l =  0.3624405062717358
+yhat accuracy:  1.0
+training accuracy:  0.66
+test accuracy:  0.52
+iter:  6
+SOLVED!, l =  0.4030476364655063
+yhat accuracy:  1.0
+training accuracy:  0.62
+test accuracy:  0.48
+iter:  7
+SOLVED!, l =  0.2968348605463689
+yhat accuracy:  1.0
+training accuracy:  0.36
+test accuracy:  0.39
+iter:  8
+SOLVED!, l =  0.29470122299810697
+yhat accuracy:  1.0
+training accuracy:  0.46
+test accuracy:  0.38
+iter:  9
+SOLVED!, l =  0.2595201151423478
+yhat accuracy:  1.0
+training accuracy:  0.26
+test accuracy:  0.44
+iter:  10
+SOLVED!, l =  0.2827156285072306
+yhat accuracy:  1.0
+training accuracy:  0.54
+test accuracy:  0.5233333333333333
+iter:  11
+SOLVED!, l =  0.17803029711317528
+yhat accuracy:  1.0
+training accuracy:  0.58
+test accuracy:  0.475
+iter:  12
+SOLVED!, l =  0.26176133952349306
+yhat accuracy:  1.0
+training accuracy:  0.42
+test accuracy:  0.49333333333333335
+final accuracy:  0.49333333333333335
+(cs231n) ➜  cs231n-final git:(master) ✗
