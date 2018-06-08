@@ -129,7 +129,7 @@ print("Starting optimization...")
 # print("Current Loss: ",k_loss)
 # print("training accuracy: ", accuracy)
 
-for i in range(20):
+for i in range(12):
     # print("PREPAIRING")
     indices = np.random.choice(range(N_tr), batch_size, replace=True)
     ytrain_inds = y_train.argmax(axis=1)
@@ -159,15 +159,16 @@ for i in range(20):
     #f = cp.sum(-yhat[np.arange(batch_size),true_class] + cp.log_sum_exp(yhat, axis=1)) + cp.norm(w,2)
     # f = (i+1)**3 * cp.sum(cp.pos(yhat - yhat[np.arange(batch_size),[true_class]].T@np.ones((1,3)) + 10)) + 1*cp.norm(w,1) + 1e3*cp.norm(w-wk,1)
     delta = 1
-    f = (cp.sum(cp.pos(yhat - yhat[np.arange(batch_size),[true_class]].T@np.ones((1,3)) + delta)) - delta*batch_size) + 1e-2*cp.norm(w,1) + 1e1*cp.norm(w-wk,"inf")
+    f = (i+1) * (cp.sum(cp.pos(yhat - yhat[np.arange(batch_size),[true_class]].T@np.ones((1,3)) + delta)) 
+        - delta*batch_size) + 1e-2*cp.norm(w,1) + (i+1)*1e-2*cp.norm(w-wk,"inf")
     objective = cp.Minimize(f)
     prob = cp.Problem(objective, const)
     # print("LEGGO")
     # r = prob.solve(solver="SCS",verbose=False)
     r = prob.solve(verbose=False)
+    w_new = wk + 1e-1/np.sqrt(i+1)*(w.value - wk)
     # w_new = wk + 1e-1/np.sqrt(i+1)*(w.value - wk)
-    # w_new = wk + 1e-1/np.sqrt(i+1)*(w.value - wk)
-    w_new = w.value
+    # w_new = w.value
     shapes=grads[0]
     ind = 0
     w_ = []

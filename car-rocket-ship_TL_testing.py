@@ -27,13 +27,24 @@ X_test = X_test.reshape(N_te,-1)
 in_size = X_train.shape[1]
 #choosing bewtween different network architectures  
 reg=0.001
-if 1:
+if 0:
     model = Sequential([
         Dense(50,input_shape=(in_size,),kernel_regularizer=regularizers.l1(reg)),
         Activation('relu'),
         #Dropout(0.3),
         Dense(10,kernel_regularizer=regularizers.l1(reg)),
         Activation('relu'),
+        #Dropout(0.3),
+        Dense(3,kernel_regularizer=regularizers.l1(reg)),
+        #Activation('softmax')
+        ])
+if 1:
+    model = Sequential([
+        Dense(50,input_shape=(in_size,),kernel_regularizer=regularizers.l1(reg)),
+        Activation('tanh'),
+        #Dropout(0.3),
+        Dense(10,kernel_regularizer=regularizers.l1(reg)),
+        Activation('tanh'),
         #Dropout(0.3),
         Dense(3,kernel_regularizer=regularizers.l1(reg)),
         #Activation('softmax')
@@ -80,7 +91,7 @@ hist = model.fit(X_train,y_train,
     epochs=20,
     verbose=2
     )
-model.save(model_dir + "tfnet_crs_50-10-3")
+model.save(model_dir + "tfnet_crs_50-10-3_tanh")
 plt.plot(hist.history['acc'], label="train")
 plt.plot(hist.history['val_acc'], label="val")
 plt.xlabel("epoch")
